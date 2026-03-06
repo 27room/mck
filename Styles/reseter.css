@@ -4,7 +4,7 @@ html{
     box-sizing:border-box;    
 }
 
-body,p,div,span,li,ul,nav,footer,header,h1,h2,h3,h4,h5,h6{
+body,p,div,span,li,ul,nav,footer,header,h1,h2,h3,h4,h5,h6, main{
     font-size: inherit;
     box-sizing: inherit;
     padding:0;

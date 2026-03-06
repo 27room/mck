@@ -6,7 +6,8 @@ body{
 }
 
 main {
-    max: width 80rem;
+    padding:0 2rem;
+    max-width: 80rem;
     margin:0 auto;
 }
 
