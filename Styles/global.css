@@ -1,1 +1,12 @@
 @import url(./reseter.css);
+body{
+    background-image: url(../Images/bgr-1920x1080-1920x1080.jpg);
+      
+    color:white;
+}
+
+main {
+    max: width 80rem;
+    margin:0 auto;
+}
+
