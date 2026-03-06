@@ -1,13 +1,21 @@
 @import url(./reseter.css);
 body{
-    background-image: url(../Images/bgr-1920x1080-1920x1080.jpg);
-      
-    color:white;
-}
+    background-image: url(../Images/bgr-1920x1080.jpgS);
+    background-size:auto;     
+    background-position: center;  
+ color: #ffffff;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.8),
+        0 0 10px rgba(255,255,255,0.7),
+        0 0 20px rgba(0,200,255,0.6),
+        0 0 35px rgba(0,200,255,0.5);
 
 main {
-    padding:0 2rem;
-    max-width: 80rem;
-    margin:0 auto;
+   min-width: 320px;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.2rem;   
 }
 

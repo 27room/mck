@@ -4,11 +4,17 @@ html{
     box-sizing:border-box;    
 }
 
-body,p,div,span,li,ul,nav,footer,header,h1,h2,h3,h4,h5,h6, main{
+body, main,p,div,span,li,ul,nav,footer,header,h1,h2,h3,h4,h5,h6{
     font-size: inherit;
     box-sizing: inherit;
     padding:0;
     margin:0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw; 
+  overflow-x: hidden; 
 }
 
 h6{
@@ -26,9 +32,11 @@ h4{
 h3{
     font-size:1.8em;
 }
+
 h2{
     font-size:2.2em;
 }
+
 h1{
     font-size:2.8em;
 }
