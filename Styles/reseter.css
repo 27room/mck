@@ -1,0 +1,34 @@
+html{
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing:border-box;    
+}
+
+body,p,div,span,li,ul,nav,footer,header,h1,h2,h3,h4,h5,h6{
+    font-size: inherit;
+    box-sizing: inherit;
+    padding:0;
+    margin:0;
+}
+
+h6{
+    font-size:1.2em;
+}
+
+h5{
+    font-size:1.3em;
+}
+
+h4{
+    font-size:1.45em;
+}
+
+h3{
+    font-size:1.8em;
+}
+h2{
+    font-size:2.2em;
+}
+h1{
+    font-size:2.8em;
+}
