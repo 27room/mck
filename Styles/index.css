@@ -766,6 +766,7 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
+    margin-top: 3em;
 }
 
 .why-content {
