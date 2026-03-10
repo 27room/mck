@@ -912,7 +912,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 60px;
+    margin-bottom: 2em;
 }
 
 .tab-btn {
