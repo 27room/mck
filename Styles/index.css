@@ -1682,3 +1682,13 @@ section {
 .delay-4 {
     animation-delay: 0.4s;
 }
+
+/* .why-thumb>img{
+  width:300px;
+  cursor:pointer;
+  transition: transform 0.3s;
+}
+
+.why-thumb>img:active{
+  transform: scale(2);
+} */
