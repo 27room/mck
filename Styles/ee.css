@@ -1,39 +1,48 @@
 @import url(./global.css);
-
-h1 {
-    text-align: center;
-    margin-top: 100px;
-    font-size: 48px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body{
 margin:0;
-font-family:Arial;
+font-family:'Poppins', sans-serif;
 background:#0f172a;
 color:white;
+text-align:center;
+line-height:1.7;
+}
+
+/* заглавие */
+
+h1 {
+text-align:center;
+margin-top:100px;
+font-size:60px;
+letter-spacing:3px;
+text-shadow:2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* контейнер */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
 }
 
 /* меню */
 
 nav{
 background:#020617;
-padding:15px;
+padding:18px;
 text-align:center;
 }
 
 nav a{
 color:#facc15;
 text-decoration:none;
-margin:0 20px;
-font-size:18px;
-font-weight:bold;
+margin:0 22px;
+font-size:20px;
+font-weight:600;
+letter-spacing:1px;
 }
 
 nav a:hover{
@@ -44,30 +53,34 @@ color:white;
 
 header{
 text-align:center;
-padding:70px;
+padding:80px;
 background:linear-gradient(90deg,#1e3a8a,#2563eb);
 }
 
 header h1{
-font-size:40px;
+font-size:52px;
+font-weight:700;
+letter-spacing:2px;
 }
 
 header p{
-font-size:20px;
+font-size:24px;
 color:#facc15;
+font-weight:500;
 }
 
 /* секции */
 
 section{
-padding:60px 15%;
+padding:70px 15%;
 text-align:center;
 }
 
 section h2{
 color:#facc15;
-margin-bottom:30px;
-font-size:32px;
+margin-bottom:35px;
+font-size:38px;
+letter-spacing:2px;
 }
 
 /* белите блокове */
@@ -75,11 +88,13 @@ font-size:32px;
 .block{
 background:white;
 color:#111;
-padding:35px;
-margin-bottom:35px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.4);
+padding:45px;
+margin-bottom:40px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 text-align:center;
+font-size:19px;
+line-height:1.8;
 }
 
 /* списъци */
@@ -87,8 +102,9 @@ text-align:center;
 ul{
 list-style:none;
 padding:0;
-line-height:2;
-font-size:18px;
+line-height:2.2;
+font-size:20px;
+font-weight:500;
 }
 
 /* снимки */
@@ -97,14 +113,14 @@ img{
 width:100%;
 max-width:500px;
 border-radius:10px;
-margin-top:20px;
+margin-top:25px;
 }
 
 /* стикери */
 
 .sticker{
-font-size:40px;
-margin-bottom:10px;
+font-size:50px;
+margin-bottom:15px;
 }
 
 /* footer */
@@ -112,6 +128,8 @@ margin-bottom:10px;
 footer{
 background:#020617;
 text-align:center;
-padding:25px;
+padding:30px;
 color:#facc15;
+font-size:18px;
+letter-spacing:1px;
 }
