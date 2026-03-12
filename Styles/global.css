@@ -22,3 +22,23 @@
 .navbar {
     text-align: center;
 }
+
+:root {
+    --gold-primary: #B8860B;
+    --gold-light: #D4A84B;
+    --gold-dark: #8B6914;
+    --gold-accent: #C9A227;
+    --bg-dark: #0F0E0C;
+    --bg-card: #1A1815;
+    --bg-card-hover: #252119;
+    --text-primary: #F5F0E8;
+    --text-secondary: #A69F94;
+    --text-muted: #6B6560;
+    --border-color: #2A2622;
+    --success: #4A7C59;
+    --danger: #8B3A3A;
+}
+
+html {
+    scroll-behavior: smooth;
+}
