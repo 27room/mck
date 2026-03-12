@@ -8,13 +8,13 @@ body {
 }
 
 header {
-    min-height: 70vh;
+    min-height: 23vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 30px 20px;
     animation: fadeIn 2s ease;
 }
 
@@ -96,23 +96,21 @@ footer {
 }
 
 .hero {
-    position: relative;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
-.hero-img {
-    position: absolute;
-    left: -95%;
-    width: 480px;
-    height: 550px;
+.section-image {
+    text-align: center;
+    margin-top: 30px;
 }
 
-.hero-img-2 {
-    position: absolute;
-    right: -95%;
-    width: 480px;
-    height: 550px;
+.section-image img {
+    width: 100%;
+    max-width: 900px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
 @media(max-width:768px){
