@@ -1,94 +1,288 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    body{
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
-    line-height:1.6;
-    }
-    
-    /* HEADER */
-    
-    header{
-    text-align:center;
-    padding:60px 20px;
-    background: linear-gradient(90deg,#2563eb,#38bdf8);
-    }
-    
-    header h1{
-    font-size:40px;
-    margin-bottom:10px;
-    }
-    
-    header p{
-    font-size:18px;
-    opacity:0.9;
-    }
-    
-    /* MAIN */
-    
-    main{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
-    }
-    
-    /* SECTIONS */
-    
-    section{
-    background:#1e293b;
-    margin-bottom:25px;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    transition:0.3s;
-    }
-    
-    section:hover{
-    /* transform:translateY(-5px); */
-    box-shadow:0 15px 30px rgba(0,0,0,0.5);
-    }
-    
-    section h2{
-    color:#38bdf8;
-    margin-bottom:15px;
-    }
-    
-    section ul{
-    padding-left:20px;
-    }
-    
-    section li{
-    margin-bottom:8px;
-    }
-    
-    /* FOOTER */
-    
-    footer{
-    text-align:center;
-    padding:20px;
-    background:#020617;
-    margin-top:30px;
-    font-size:14px;
-    }    
-    .nachalo-box{
-        
-        position:absolute;
-        top: 20px;
-        left: 20px;
-        background:#1e293b;
-        padding:10px 18px;
-        border-radius:8px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.4);
-        }
-        
-        .nachalo-box a{
-        color:#38bdf8;
-        font-size:16px;
-        text-decoration:none;
-        font-weight:bold;
-        }
+/* Променливи за цветове и настройки */
+:root {
+    --primary-dark: #1a2a6c;  /* Тъмно синьо */
+    --accent-blue: #3498db;   /* Светло синьо */
+    --vibrant-purple: #8e44ad; /* Лилаво (като на снимката ти) */
+    --white: #ffffff;
+    --bg-light: #f8f9fa;
+    --text-main: #2c3e50;
+    --transition: all 0.3s ease;
+}
+
+/* Основни настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Навигация (Navbar) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: rgba(26, 42, 108, 0.9); /* Полупрозрачно тъмно синьо */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.home-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.home-link:hover {
+    color: var(--accent-blue);
+}
+
+/* HERO SECTION - Тук оправихме "бъга" с бутона */
+.hero-section {
+    height: 100vh; /* Заема целия екран */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../Images/kct/Gemini_Generated_Image_2l975p2l975p2l97.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Подрежда елементите вертикално */
+    align-items: center;    /* Центрира ги хоризонтално */
+    justify-content: center;
+    gap: 25px;              /* Разстояние между заглавие, текст и бутон */
+    max-width: 900px;
+}
+
+.header-content h1 {
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+}
+
+.header-content p {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 300;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Бутони */
+.btn {
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.primary-btn {
+    background: var(--accent-blue);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.primary-btn:hover {
+    background: var(--vibrant-purple); /* Променя се на лилаво при докосване */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(142, 68, 173, 0.4);
+}
+
+/* Секции и Карти */
+.section-card {
+    max-width: 1150px;
+    margin: 60px auto;
+    padding: 50px;
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.icon-left {
+    margin-right: 15px;
+    color: var(--vibrant-purple);
+}
+
+/* Гридове за "Какво ще учиш" и "Кариера" */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.grid-item, .career-item {
+    padding: 30px;
+    background: #fafafa;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.grid-item:hover, .career-item:hover {
+    border-color: var(--vibrant-purple);
+    background: var(--white);
+    transform: translateY(-8px);
+}
+
+.grid-item h3 {
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+/* Разделяне на съдържание (Текст + Снимка) */
+.split-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-side { flex: 1.2; min-width: 300px; }
+.image-side { flex: 0.8; min-width: 300px; }
+
+.responsive-img {
+    width: 100%;
+    border-radius: 20px;
+    border: 4px solid var(--vibrant-purple);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.responsive-img:hover {
+    filter: brightness(1.1);
+}
+
+/* Списъци с икони */
+ul { list-style: none; }
+li { margin-bottom: 12px; display: flex; align-items: baseline; }
+.icon-list { color: var(--accent-blue); margin-right: 10px; font-size: 0.9rem; }
+.icon-list-accent { color: var(--vibrant-purple); margin-right: 12px; }
+
+/* Професионална реализация - Икони */
+.career-grid { text-align: center; }
+.icon-career {
+    font-size: 3rem;
+    color: var(--vibrant-purple);
+    margin-bottom: 20px;
+}
+
+/* Модал (Lightbox) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 10px;
+    animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.6); opacity: 0;} 
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Бутон Нагоре */
+.scroll-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--vibrant-purple);
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.scroll-btn:hover { background: var(--primary-dark); }
+
+/* Footer */
+footer {
+    background: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+}
+
+footer p { margin-bottom: 10px; opacity: 0.8; }
+
+/* Анимации */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Мобилна адаптация */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 25px; }
+    .section-card { padding: 30px 20px; margin: 20px; }
+    .header-content h1 { font-size: 2.2rem; }
+    .close-modal { right: 20px; top: 20px; }
+}

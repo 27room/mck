@@ -3,111 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Styles/kct.css">
-    <title>KCT</title> 
-    <style>
-        .scroll-btn {
-        position: fixed;
-        bottom: 20px; /* разстояние отдолу */
-        right: 20px; /* разстояние отдясно */
-        padding: 12px 20px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        }
-        </style>   
-</head>
+    <title>КCT - ПГМЕТТ "Христо Ботев"</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head><link rel="stylesheet" href="./Styles/ktt.css">
+<body id="top">
 
-<body>
+    <nav class="navbar">
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i> Начало</a>
+    </nav>
 
-<header>
-    <h1>Компютърни системи и технологии</h1>
-    <p>Изграждай и управлявай дигиталния свят</p>
-</header>
+    <header class="hero-section">
+        <div class="header-content animate-fade-in">
+            <h1>Компютърни системи и технологии</h1>
+            <p>Изграждай, управлявай и иновирай дигиталния свят</p>
+            <a href="#about" class="btn primary-btn">Научи повече <i class="fas fa-chevron-down"></i></a>
+        </div>
+    </header>
 
-<main>
+    <main>
+        <section id="about" class="section-card animate-fade-in">
+            <h2><i class="fas fa-info-circle icon-left"></i> Какво представлява специалността?</h2>
+            <p>
+                Обичаш ли технологиите и искаш ли да разбираш как работят компютрите, мрежите и софтуерът? 
+                Специалност <strong>„Компютърни системи и технологии“</strong> в ПГМЕТТ „Христо Ботев“ ще те подготви да създаваш, поддържаш и оптимизираш компютърни системи и мрежови решения – умения, които са незаменими в съвременния дигитален свят.
+            </p>
+        </section>
 
-<section class="about">
-    <h2>Какво представлява специалността?</h2>
-    <p>
-        Специалност „Компютърни системи и технологии“ подготвя учениците
-        да работят с компютърни системи, мрежи и софтуер. Ще научиш как
-        работят компютрите, как се изграждат мрежи и как се поддържат
-        информационни системи.
-    </p>
-</section>
+        <section class="section-card animate-fade-in">
+            <h2><i class="fas fa-graduation-cap icon-left"></i> Какво ще учиш?</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3><i class="fas fa-microchip"></i> Хардуер и системи</h3>
+                    <ul>
+                        <li><i class="fas fa-check icon-list"></i> Асемблиране и конфигуриране на компютърни системи</li>
+                        <li><i class="fas fa-check icon-list"></i> Диагностика и профилактика на хардуер</li>
+                        <li><i class="fas fa-check icon-list"></i> Работа със сървърно оборудване и RAID масиви</li>
+                        <li><i class="fas fa-check icon-list"></i> Поддръжка на периферни устройства и UPS системи</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h3><i class="fas fa-network-wired"></i> Мрежи и сигурност</h3>
+                    <ul>
+                        <li><i class="fas fa-check icon-list"></i> Изграждане на локални и корпоративни мрежи</li>
+                        <li><i class="fas fa-check icon-list"></i> Администриране на потребители и достъп</li>
+                        <li><i class="fas fa-check icon-list"></i> Информационна сигурност и защита на данни</li>
+                        <li><i class="fas fa-check icon-list"></i> Мрежови услуги (DHCP, DNS)</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h3><i class="fas fa-code"></i> Софтуер и Web</h3>
+                    <ul>
+                        <li><i class="fas fa-check icon-list"></i> Инсталиране на ОС (Windows, Linux, Android)</li>
+                        <li><i class="fas fa-check icon-list"></i> Разработка на базови софтуерни приложения</li>
+                        <li><i class="fas fa-check icon-list"></i> Проектиране и разработка на уебсайтове</li>
+                        <li><i class="fas fa-check icon-list"></i> Специализиран софтуер за управление</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<section class="learning">
-    <h2>Какво ще учиш?</h2>
+        <section class="section-card animate-fade-in split-content">
+            <div class="text-side">
+                <h2><i class="fas fa-laptop-code icon-left"></i> Практически умения</h2>
+                <p>Обучението се провежда в модерни компютърни зали и лаборатории, оборудвани със съвременни системи и измервателна техника.</p>
+                <ul class="skills-list">
+                    <li><i class="fas fa-desktop icon-list-accent"></i> Работа с Windows, Linux и Android платформите</li>
+                    <li><i class="fas fa-server icon-list-accent"></i> Конфигуриране на сървъри и мрежово оборудване</li>
+                    <li><i class="fas fa-shield-virus icon-list-accent"></i> Защитни системи и антивирусни приложения</li>
+                    <li><i class="fas fa-tools icon-list-accent"></i> Диагностика със специализиран софтуер</li>
+                </ul>
+            </div>
+            <div class="image-side">
+                <img src="./Images/kct/Gemini_Generated_Image_3zgq8n3zgq8n3zgq.png" alt="Лаборатория КСТ" class="clickable-img responsive-img">
+            </div>
+        </section>
 
-    <ul>
-        <li>Асемблиране на компютърни системи</li>
-        <li>Инсталиране на операционни системи</li>
-        <li>Поддръжка и диагностика на компютри</li>
-        <li>Изграждане на компютърни мрежи</li>
-        <li>Администриране на потребители и достъп</li>
-        <li>Информационна сигурност</li>
-        <li>Работа със сървъри и мрежово оборудване</li>
-    </ul>
+        <section class="section-card animate-fade-in">
+            <h2><i class="fas fa-briefcase icon-left"></i> Кариерно развитие</h2>
+            <p>След завършване можеш да се реализираш като:</p>
+            <div class="grid-container career-grid">
+                <div class="career-item"><i class="fas fa-user-cog icon-career"></i><h4>Системен администратор</h4></div>
+                <div class="career-item"><i class="fas fa-network-wired icon-career"></i><h4>Мрежов специалист</h4></div>
+                <div class="career-item"><i class="fas fa-user-shield icon-career"></i><h4>Експерт по киберсигурност</h4></div>
+                <div class="career-item"><i class="fas fa-code icon-career"></i><h4>Web разработчик</h4></div>
+                <div class="career-item"><i class="fas fa-tools icon-career"></i><h4>IT техник и монтажник</h4></div>
+            </div>
+            <div class="career-info-text text-center mt-4">
+                <p>Можеш да работиш в IT компании, мобилни оператори, телевизии или да стартираш <strong>собствен бизнес</strong> в областта на технологиите.</p>
+            </div>
+        </section>
 
-</section>
+        <section class="section-card animate-fade-in highlight-card">
+            <h2><i class="fas fa-star icon-left"></i> Защо да избереш КСТ?</h2>
+            <ul class="target-list">
+                <li><i class="fas fa-heart icon-list-accent"></i> Ако обичаш компютрите, мрежите и софтуера.</li>
+                <li><i class="fas fa-rocket icon-list-accent"></i> Ако искаш широк спектър от практически умения в IT сектора.</li>
+                <li><i class="fas fa-chart-line icon-list-accent"></i> Ако търсиш стабилна и високоплатена професия с бъдеще.</li>
+                <li><i class="fas fa-lightbulb icon-list-accent"></i> Ако мечтаеш за работа с модерни технологии и иновации.</li>
+            </ul>
+        </section>
+    </main>
 
-<section class="skills">
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullImg">
+    </div>
 
-<h2>Практически умения</h2>
+    <a href="#top" class="scroll-btn" title="Нагоре"><i class="fas fa-arrow-up"></i></a>
 
-<ul>
-<li>Работа с Windows, Linux и Android</li>
-<li>Конфигуриране на мрежи</li>
-<li>Работа със сървърни системи</li>
-<li>Използване на софтуер за диагностика</li>
+    <footer>
+        <p>&copy; 2026 ПГМЕТТ "Христо Ботев" - Шумен</p>
+        <p>Специалност КСТ – Твоето бъдеще започва тук!</p>
+        <p><small>Разработено от: Олджай, Шефкет и Александър</small></p>
+    </footer>
 
-</ul>
+    <script>
+        // Modal функционалност
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImg");
+        const closeBtn = document.querySelector(".close-modal");
 
-</section>
+        document.querySelectorAll('.clickable-img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
 
-<section class="career">
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
 
-<h2>Професионална реализация</h2>
+        // Плавна навигация
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
 
-<ul>
-<li>Системен администратор</li>
-<li>IT техник</li>
-<li>Специалист по компютърни мрежи</li>
-<li>Специалист по информационна сигурност</li>
-<li>Поддръжка на компютърни системи</li>
-</ul>
-
-</section>
-
-<section class="target">
-
-<h2>За кого е тази специалност?</h2>
-
-<ul>
-<li>За ученици, които обичат компютрите</li>
-<li>За хора, които се интересуват от технологии</li>
-<li>За бъдещи IT специалисти</li>
-<li>За тези, които искат модерна професия</li>
-</ul>
-
-</section>
-
-</main>
-
-
- <a href="index.html" style="text-decoration:none;">
-<button class="scroll-btn"  >
-    НАЧАЛО
-
-</button>
- </a>
- <footer>
-        
- <p>ПГМЕТТ "Христо Ботев" -УЕБ дизайн 11А</p>
- <p>Страницата се разработва от Олджай, Шефкет и Александър </p>
-
- </footer>
-
+        // Бутон нагоре
+        const scrollBtn = document.querySelector('.scroll-btn');
+        window.onscroll = () => {
+            scrollBtn.style.display = (window.scrollY > 300) ? "flex" : "none";
+        };
+    </script>
+</body>
+</html>
