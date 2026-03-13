@@ -1,6 +1,4 @@
-* {
-  transition: all 0.3s ease-in-out;
-}
+
 /* --- ОСНОВНИ НАСТРОЙКИ --- */
 :root {
   --primary-color: #1a1a2e; /* Тъмно синьо/черно за професионализъм */
@@ -195,6 +193,7 @@ body {
   transition: all 0.3s ease;
   text-align: center;
   border: 1px solid #eaeaea;
+  transition: transform 0.3s ease; 
 }
 
 .card:hover {
@@ -371,6 +370,9 @@ footer p {
 
 /* --- МОБИЛНИ УСТРОЙСТВА --- */
 @media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
   .hero h1 {
       font-size: 36px;
   }
@@ -433,4 +435,43 @@ footer p {
   transform: scale(1.03); /* Леко уголемяване */
   box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* По-силна сянка */
   border-color: #e63946; /* Червена рамка */
+}
+
+/* --- БУТОН НАГОРЕ --- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color); /* Вашето червено */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1500;
+  opacity: 0; /* Скрит в началото */
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.scroll-top-btn.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--primary-color); /* Сменя цвета на тъмносиньо при докосване */
+  transform: translateY(-5px);
+}
+
+.scroll-top-btn {
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }

@@ -169,35 +169,78 @@
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Уголемена снимка">
-    </div>
+    </div> 
 
     <script>
-        // Взимаме нужните елементи от HTML-а
+
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
         const closeBtn = document.querySelector(".close-lightbox");
         const galleryImages = document.querySelectorAll(".gallery img");
+       
 
-        // За всяка снимка в галерията добавяме команда: При клик, отвори LightBox-а
+    
+        // Отваряне на снимката
         galleryImages.forEach(img => {
             img.addEventListener("click", function() {
-                lightbox.style.display = "flex"; // Показваме черния екран
-                lightboxImg.src = this.src;      // Взимаме адреса (src) на кликнатата снимка
+                lightbox.style.display = "flex";
+                lightboxImg.src = this.src;
             });
         });
-
-        // Затваряне при клик върху "Х"
-        closeBtn.addEventListener("click", function() {
+    
+        // Функция за затваряне
+        function closeLightbox() {
             lightbox.style.display = "none";
-        });
-
-        // Затваряне при клик където и да е извън самата снимка (върху тъмния фон)
+        }
+    
+        // Затваряне при клик върху "X"
+        closeBtn.addEventListener("click", closeLightbox);
+    
+        // Затваряне при клик извън снимката (върху черния фон)
         lightbox.addEventListener("click", function(e) {
             if (e.target !== lightboxImg) {
-                lightbox.style.display = "none";
+                closeLightbox();
             }
         });
+    
+        // КЛАВИАТУРА: Затваряне при натискане на Escape (Esc)
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeLightbox();
+            }
+        });
+
+        
+
+
+       // Кодът за Галерията (който вече имате) ... остава си там
+
+// НОВИЯТ КОД ЗА БУТОНА НАГОРЕ:
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById("scrollTopBtn");
+
+    // Показване/скриване при скрол
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            btn.classList.add("show");
+        } else {
+            btn.classList.remove("show");
+        }
+    });
+
+    // Клик функция
+    btn.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+});
     </script>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Към началото">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
 </body>
 </html>
