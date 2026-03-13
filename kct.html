@@ -120,7 +120,7 @@
     </footer>
 
     <script>
-        // Modal функционалност
+
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("fullImg");
         const closeBtn = document.querySelector(".close-modal");
@@ -135,7 +135,6 @@
         closeBtn.onclick = () => modal.style.display = "none";
         window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
 
-        // Плавна навигация
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -143,7 +142,6 @@
             });
         });
 
-        // Бутон нагоре
         const scrollBtn = document.querySelector('.scroll-btn');
         window.onscroll = () => {
             scrollBtn.style.display = (window.scrollY > 300) ? "flex" : "none";
