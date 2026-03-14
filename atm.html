@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Автомобилна техника и мехатроника</title>
-    
+
     <link rel="stylesheet" href="Styles/atm.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    
-</head> 
+
+</head>
+
 <body>
- 
+
     <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Назад</a>
 
     <header class="hero">
@@ -24,7 +26,7 @@
             <span class="badge">ПГМЕТТ „Христо Ботев“</span>
             <h1>Автомобилна техника и мехатроника</h1>
             <p class="subtitle">Обичаш ли автомобили и високите технологии? Тук не просто учиш за автомобила – ти се превръщаш в негов експерт.</p>
-            
+
             <div class="dev-credits">
                 <p>Страницата се разработва от <strong>Бурак и Стилиян</strong></p>
             </div>
@@ -98,10 +100,10 @@
             <h2><i class="fa-solid fa-camera-retro"></i> Галерия</h2>
         </div>
         <div class="gallery">
-            <img src="Images/atm/car3.png" alt="Снимка 1">
-            <img src="Images/atm/car1.png" alt="Снимка 2">
-            <img src="Images/atm/car2.png" alt="Снимка 3">
-            <img src="Images/atm/car4.png" alt="Снимка 4">
+            <img src="Images/atm/car3.webp" alt="Снимка 1">
+            <img src="Images/atm/car1.webp" alt="Снимка 2">
+            <img src="Images/atm/car2.webp" alt="Снимка 3">
+            <img src="Images/atm/car4.webp" alt="Снимка 4">
         </div>
     </section>
 
@@ -170,17 +172,16 @@
     <div id="lightbox" class="lightbox">
         <span class="close-lightbox">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="Уголемена снимка">
-    </div> 
+    </div>
 
     <script>
-
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
         const closeBtn = document.querySelector(".close-lightbox");
         const galleryImages = document.querySelectorAll(".gallery img");
-       
 
-    
+
+
         // Отваряне на снимката
         galleryImages.forEach(img => {
             img.addEventListener("click", function() {
@@ -188,22 +189,22 @@
                 lightboxImg.src = this.src;
             });
         });
-    
+
         // Функция за затваряне
         function closeLightbox() {
             lightbox.style.display = "none";
         }
-    
+
         // Затваряне при клик върху "X"
         closeBtn.addEventListener("click", closeLightbox);
-    
+
         // Затваряне при клик извън снимката (върху черния фон)
         lightbox.addEventListener("click", function(e) {
             if (e.target !== lightboxImg) {
                 closeLightbox();
             }
         });
-    
+
         // КЛАВИАТУРА: Затваряне при натискане на Escape (Esc)
         document.addEventListener("keydown", function(e) {
             if (e.key === "Escape") {
@@ -211,32 +212,32 @@
             }
         });
 
-        
 
 
-       // Кодът за Галерията (който вече имате) ... остава си там
 
-// НОВИЯТ КОД ЗА БУТОНА НАГОРЕ:
-document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById("scrollTopBtn");
+        // Кодът за Галерията (който вече имате) ... остава си там
 
-    // Показване/скриване при скрол
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            btn.classList.add("show");
-        } else {
-            btn.classList.remove("show");
-        }
-    });
+        // НОВИЯТ КОД ЗА БУТОНА НАГОРЕ:
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById("scrollTopBtn");
 
-    // Клик функция
-    btn.onclick = function() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+            // Показване/скриване при скрол
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btn.classList.add("show");
+                } else {
+                    btn.classList.remove("show");
+                }
+            });
+
+            // Клик функция
+            btn.onclick = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            };
         });
-    };
-});
     </script>
 
     <button id="scrollTopBtn" class="scroll-top-btn" title="Към началото">
@@ -244,4 +245,5 @@ document.addEventListener('DOMContentLoaded', function() {
     </button>
 
 </body>
+
 </html>

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>КCT - ПГМЕТТ "Христо Ботев"</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head><link rel="stylesheet" href="./Styles/ktt.css">
+</head>
+<link rel="stylesheet" href="./Styles/ktt.css">
+
 <body id="top">
 
     <nav class="navbar">
@@ -26,8 +29,8 @@
         <section id="about" class="section-card animate-fade-in">
             <h2><i class="fas fa-info-circle icon-left"></i> Какво представлява специалността?</h2>
             <p>
-                Обичаш ли технологиите и искаш ли да разбираш как работят компютрите, мрежите и софтуерът? 
-                Специалност <strong>„Компютърни системи и технологии“</strong> в ПГМЕТТ „Христо Ботев“ ще те подготви да създаваш, поддържаш и оптимизираш компютърни системи и мрежови решения – умения, които са незаменими в съвременния дигитален свят.
+                Обичаш ли технологиите и искаш ли да разбираш как работят компютрите, мрежите и софтуерът? Специалност <strong>„Компютърни системи и технологии“</strong> в ПГМЕТТ „Христо Ботев“ ще те подготви да създаваш, поддържаш и оптимизираш компютърни
+                системи и мрежови решения – умения, които са незаменими в съвременния дигитален свят.
             </p>
         </section>
 
@@ -76,7 +79,7 @@
                 </ul>
             </div>
             <div class="image-side">
-                <img src="./Images/kct/Gemini_Generated_Image_3zgq8n3zgq8n3zgq.png" alt="Лаборатория КСТ" class="clickable-img responsive-img">
+                <img src="./Images/kct/Gemini_Generated_Image_3zgq8n3zgq8n3zgq.webp" alt="Лаборатория КСТ" class="clickable-img responsive-img">
             </div>
         </section>
 
@@ -84,11 +87,21 @@
             <h2><i class="fas fa-briefcase icon-left"></i> Кариерно развитие</h2>
             <p>След завършване можеш да се реализираш като:</p>
             <div class="grid-container career-grid">
-                <div class="career-item"><i class="fas fa-user-cog icon-career"></i><h4>Системен администратор</h4></div>
-                <div class="career-item"><i class="fas fa-network-wired icon-career"></i><h4>Мрежов специалист</h4></div>
-                <div class="career-item"><i class="fas fa-user-shield icon-career"></i><h4>Експерт по киберсигурност</h4></div>
-                <div class="career-item"><i class="fas fa-code icon-career"></i><h4>Web разработчик</h4></div>
-                <div class="career-item"><i class="fas fa-tools icon-career"></i><h4>IT техник и монтажник</h4></div>
+                <div class="career-item"><i class="fas fa-user-cog icon-career"></i>
+                    <h4>Системен администратор</h4>
+                </div>
+                <div class="career-item"><i class="fas fa-network-wired icon-career"></i>
+                    <h4>Мрежов специалист</h4>
+                </div>
+                <div class="career-item"><i class="fas fa-user-shield icon-career"></i>
+                    <h4>Експерт по киберсигурност</h4>
+                </div>
+                <div class="career-item"><i class="fas fa-code icon-career"></i>
+                    <h4>Web разработчик</h4>
+                </div>
+                <div class="career-item"><i class="fas fa-tools icon-career"></i>
+                    <h4>IT техник и монтажник</h4>
+                </div>
             </div>
             <div class="career-info-text text-center mt-4">
                 <p>Можеш да работиш в IT компании, мобилни оператори, телевизии или да стартираш <strong>собствен бизнес</strong> в областта на технологиите.</p>
@@ -120,7 +133,6 @@
     </footer>
 
     <script>
-
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("fullImg");
         const closeBtn = document.querySelector(".close-modal");
@@ -133,12 +145,16 @@
         });
 
         closeBtn.onclick = () => modal.style.display = "none";
-        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+        window.onclick = (e) => {
+            if (e.target == modal) modal.style.display = "none";
+        }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
@@ -148,4 +164,5 @@
         };
     </script>
 </body>
+
 </html>
