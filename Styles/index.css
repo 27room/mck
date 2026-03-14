@@ -340,7 +340,7 @@ body.menu-open {
 /* Hero Section */
 
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -1121,13 +1121,13 @@ section {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 80px;
-    margin-bottom: 3em;
+    margin-bottom: 1.6em;
 }
 
 .development-info h3 {
     font-size: 32px;
     color: var(--text-primary);
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
 }
 
 .development-info p {
@@ -1191,7 +1191,7 @@ section {
 
 .footer {
     background: var(--bg-dark);
-    padding: 3em;
+    padding: 2em;
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-family: 'Libre Franklin', sans-serif;
