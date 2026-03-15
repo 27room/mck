@@ -1510,3 +1510,7 @@ img {
     color: #fff;
     cursor: pointer;
 }
+
+.gold-border-carousel {
+    border: 3px solid var(--gold-accent);
+}
