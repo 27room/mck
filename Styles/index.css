@@ -1514,3 +1514,7 @@ img {
 .gold-border-carousel {
     border: 3px solid var(--gold-accent);
 }
+
+.zoom-img {
+    cursor: pointer;
+}

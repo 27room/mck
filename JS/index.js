@@ -1,3 +1,7 @@
+/* =========================
+NAVBAR + MOBILE MENU
+========================= */
+
 const navbar = document.getElementById("navbar");
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -8,35 +12,76 @@ const mobileNavLinks = document.querySelectorAll(".mobile-nav-links a");
 const navLinks = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll("section[id]");
 
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
-const closeBtn = document.querySelector('.lightbox-close');
-const thumbs = document.querySelectorAll('.why-thumb img');
+/* =========================
+LIGHTBOX
+========================= */
 
-thumbs.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+/* всички снимки със zoom */
+const zoomImages = document.querySelectorAll(".zoom-img");
+
+zoomImages.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        if (!lightbox || !lightboxImg) return;
+
+        lightbox.style.display = "flex";
         lightboxImg.src = img.src;
     });
 });
 
-closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+/* бутон за затваряне */
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+}
 
+/* затваряне при клик извън снимката */
+if (lightbox) {
 
-lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) lightbox.style.display = 'none';
+    lightbox.addEventListener("click", e => {
+
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+}
+
+/* затваряне с ESC */
+document.addEventListener("keydown", e => {
+
+    if (e.key === "Escape" && lightbox) {
+        lightbox.style.display = "none";
+    }
+
 });
 
+/* =========================
+NAVBAR SCROLL EFFECT
+========================= */
 
-/* NAVBAR SCROLL */
+if (navbar) {
 
-window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
+    window.addEventListener("scroll", () => {
 
-/* MOBILE MENU */
+        navbar.classList.toggle("scrolled", window.scrollY > 50);
+
+    });
+}
+
+/* =========================
+MOBILE MENU
+========================= */
 
 function openMobileMenu() {
+
+    if (!mobileMenu) return;
+
     mobileMenu.classList.add("open");
     mobileMenuOverlay.classList.add("open");
     mobileMenuBtn.classList.add("active");
@@ -44,27 +89,40 @@ function openMobileMenu() {
 }
 
 function closeMobileMenu() {
+
+    if (!mobileMenu) return;
+
     mobileMenu.classList.remove("open");
     mobileMenuOverlay.classList.remove("open");
     mobileMenuBtn.classList.remove("active");
     document.body.classList.remove("menu-open");
+
 }
 
-mobileMenuBtn.addEventListener("click", openMobileMenu);
-mobileMenuClose.addEventListener("click", closeMobileMenu);
-mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener("click", openMobileMenu);
+}
+
+if (mobileMenuClose) {
+    mobileMenuClose.addEventListener("click", closeMobileMenu);
+}
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+}
 
 mobileNavLinks.forEach(link => {
+
     link.addEventListener("click", closeMobileMenu);
+
 });
 
-document.addEventListener("keydown", e => {
-    if (e.key === "Escape") closeMobileMenu();
-});
-
-/* SMOOTH SCROLL */
+/* =========================
+SMOOTH SCROLL
+========================= */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
     anchor.addEventListener("click", function(e) {
 
         const target = document.querySelector(this.getAttribute("href"));
@@ -76,36 +134,44 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         target.scrollIntoView({
             behavior: "smooth"
         });
-
     });
 });
 
-/* ACTIVE NAV LINK */
+/* =========================
+ACTIVE NAV LINK
+========================= */
+
 function highlightNav() {
+
     const scroll = window.scrollY + 150;
+
     sections.forEach(section => {
+
         const top = section.offsetTop;
         const height = section.offsetHeight;
         const id = section.id;
+
         if (scroll >= top && scroll < top + height) {
 
             navLinks.forEach(link => {
+
                 link.classList.toggle(
                     "active",
                     link.getAttribute("href") === "#" + id
                 );
+
             });
+
             mobileNavLinks.forEach(link => {
+
                 link.classList.toggle(
                     "active",
                     link.getAttribute("href") === "#" + id
                 );
+
             });
         }
     });
 }
-
-
-
 
 window.addEventListener("scroll", highlightNav);
