@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Хибридни електрически превозни средства</title>
 
+    <link rel="icon" href="./Images/fav-icon.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
     <link rel="stylesheet" href="Styles/hepps.css">
 </head>
@@ -113,6 +114,42 @@
     </section>
 
 
+    <section>
+        <div style="margin-left: 44rem;">
+
+            <div class="mySlides">
+                <img src="/Images/hepps/full-hybrid.webp" style="width:480px;height:350px;">
+                <h1 style="margin-left:8rem;">пълен хибрид</h1>
+            </div>
+        
+            <div class="mySlides">
+                <img src="/Images/hepps/plug-in-hybrid.webp" style="width:480px;height:350px;">
+                <h1 style="margin-left:11rem;">plug-in</h1>
+            </div>
+        
+            <div class="mySlides">
+                <img src="/Images/hepps/mek-hybrid.webp" style="width:480px;height:350px;">
+                <h1 style="margin-left:12.5rem;">мек</h1>
+            </div>
+        
+        </div>
+
+        <script>
+            var myIndex = 0;
+            carousel12();
+            function carousel12() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel12, 2000);
+            }
+        </script>
+    </section>
 
     <section class="advantages">
 
@@ -144,7 +181,7 @@
     </section>
 
 
-    <section class="comparison">
+    <section class="comparison" style="margin-left:-45px;">
 
         <h2>Сравнение между различни видове автомобили</h2>
 
