@@ -1,43 +1,365 @@
-@import url(./global.css);
-
-
-body{
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
-    width: 80%;
-    margin: auto;
-    background: white;
-    padding: 30px;
+html {
+    scroll-behavior: smooth;
 }
 
-h1{
-    color:#1e3a8a;
-    text-align:center;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b0e14;
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
-h2{
-    color:#2563eb;
-    margin-top:30px;
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-p{
-    line-height:1.6;
-    color:#333;
+p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
 }
 
-ul{
-    margin-left:20px;
+strong {
+    color: #00d4ff;
 }
 
-li{
-    margin-bottom:8px;
+/* ============================================
+   НАВИГАЦИЯ
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(11, 14, 20, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #00d4ff;
+    z-index: 1000;
+    padding: 15px 0;
 }
 
-strong{
-    color:#1e40af;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    color: #00d4ff;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-item:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 5px #00d4ff;
+}
+
+/* ============================================
+   HERO СЕКЦИЯ
+   ============================================ */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.4)),
+                      url('../Images/rs-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #0b0e14;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.neon-text {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    color: #00d4ff;
+    text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff;
+    margin-bottom: 10px;
+}
+
+.hero-divider {
+    width: 100px;
+    height: 4px;
+    background: #00d4ff;
+    margin: 20px auto;
+    box-shadow: 0 0 15px #00d4ff;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background: #00d4ff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.cta-button:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 40px #00d4ff;
+    background: #fff;
+}
+
+/* ============================================
+   СЕКЦИИ И СЪДЪРЖАНИЕ
+   ============================================ */
+.container {
+    padding: 100px 20px;
+}
+
+.dark-bg {
+    background-color: #0f131a;
+}
+
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    color: #00d4ff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+.highlight-text {
+    font-size: 1.2rem;
+    color: #00d4ff;
+    font-weight: 300;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* ============================================
+   СПИСЪЦИ (GRID)
+   ============================================ */
+.grid-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.grid-list li {
+    background: #1a222d;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 6px solid #00d4ff;
+    transition: transform 0.3s, background 0.3s;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.grid-list li:hover {
+    transform: translateX(10px);
+    background: #242d3a;
+}
+
+/* ============================================
+   ИЗОБРАЖЕНИЯ
+   ============================================ */
+.image-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.image-center img {
+    max-width: 100%;
+    border-radius: 20px;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 10px 50px rgba(0, 212, 255, 0.2);
+    transition: transform 0.4s;
+}
+
+.image-center img:hover {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #05070a;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   БУТОН "НАГОРЕ"
+   ============================================ */
+.top-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00d4ff;
+    color: #000;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 0 20px #00d4ff;
+    z-index: 1000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.top-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px #00d4ff;
+}
+
+/* ============================================
+   АДАПТИВЕН ДИЗАЙН ЗА МОБИЛНИ УСТРОЙСТВА
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* 1. Hero секция */
+    .hero-section {
+        background-attachment: scroll;
+        height: 100vh;
+    }
+
+    .neon-text {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    /* 2. Навигация */
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-item {
+        font-size: 0.7rem;
+    }
+
+    /* 3. Секции и текстове */
+    .container {
+        padding: 50px 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* 4. Списъци в една колона */
+    .grid-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .grid-list li {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+
+    /* 5. Снимки */
+    .image-center img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    /* 6. CTA бутон */
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 0.9rem;
+    }
+
+    /* 7. Бутон "Нагоре" */
+    .top-button {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 1.2rem;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* За много малки телефони (под 480px) */
+@media (max-width: 480px) {
+    .neon-text {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
