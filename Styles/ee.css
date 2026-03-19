@@ -1,186 +1,164 @@
+/* --- ОСНОВНИ ПРОМЕНЛИВИ --- */
 :root {
     --bg: #08080a;
     --card: #111115;
     --accent: #6366f1;
     --text-main: #ffffff;
     --text-dim: #94a3b8;
-    --border: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.06);
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* АДАПТИВНА ТИПОГРАФИЯ (Интелигентно самонастройване) */
+    --fs-base: clamp(14px, 1vw, 17px);
+    --fs-h1: clamp(1.8rem, 7vw, 4rem); 
+    --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
+    --fs-h3: clamp(1.1rem, 2vw, 1.4rem);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; 
+    font-size: var(--fs-base); 
+}
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-main);
     background-color: var(--bg);
     color: var(--text-main);
-    line-height: 1.6;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
-/* --- HERO SECTION --- */
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: 
-        linear-gradient(rgba(8, 8, 10, 0.85), rgba(8, 8, 10, 0.7)), 
-        url("../Images/ee/431909420_900061888581498_7415636394313438956_n.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.live-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: 
-        linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
-    background-size: 60px 60px;
-    animation: gridMove 20s linear infinite;
-    z-index: 1;
-    opacity: 0.5;
-    will-change: transform;
-}
-
-@keyframes gridMove {
-    0% { transform: perspective(500px) rotateX(20deg) translateY(0); }
-    100% { transform: perspective(500px) rotateX(20deg) translateY(60px); }
-}
-
-.hero-content { position: relative; z-index: 10; text-align: center; padding: 0 20px; }
-
-/* --- NAVIGATION --- */
+/* --- НАВИГАЦИЯ --- */
 .navbar {
     position: fixed;
     top: 0; width: 100%;
     padding: 15px 0;
-    background: rgba(8, 8, 10, 0.8);
-    backdrop-filter: blur(20px);
+    background: rgba(8, 8, 10, 0.85);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 25px;
 }
 
-.logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
-.nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
-.nav-item { text-decoration: none; color: var(--text-dim); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
+.logo { font-weight: 800; font-size: 1.5rem; font-family: var(--font-mono); }
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+
+.nav-item { 
+    text-decoration: none; color: var(--text-dim); 
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; 
+}
 
 .back-link {
-    color: #ffffff !important;
+    color: #fff !important;
     background: rgba(99, 102, 241, 0.15);
-    padding: 10px 20px !important;
-    border-radius: 10px;
-    border: 1px solid rgba(99, 102, 241, 0.4);
-    font-family: 'JetBrains Mono', monospace;
+    padding: 8px 16px !important;
+    border-radius: 8px;
 }
 
-.back-link:hover {
-    background: var(--accent) !important;
-    transform: translateX(-5px);
+/* --- HERO SECTION (САМОНАСТРОЙВАЩА СЕ) --- */
+.hero-section {
+    position: relative;
+    height: 80vh; min-height: 450px;
+    display: flex; align-items: center; justify-content: center;
+    background-image: linear-gradient(rgba(8,8,10,0.85), rgba(8,8,10,0.85)), url("../Images/ee/431909420_900061888581498_7415636394313438956_n.png");
+    background-size: cover; background-position: center;
 }
 
-/* --- TYPOGRAPHY --- */
+.live-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.hero-content { 
+    position: relative; z-index: 10; text-align: center; 
+    width: 100%; max-width: 900px; padding: 0 20px;
+}
+
 .neon-text {
-    font-size: clamp(3rem, 12vw, 8rem);
-    font-weight: 800; line-height: 0.85; letter-spacing: -4px;
-    background: linear-gradient(to bottom, #fff 60%, #555);
+    font-size: var(--fs-h1);
+    font-weight: 800; line-height: 1.1;
+    background: linear-gradient(to bottom, #fff 60%, #888);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    word-wrap: break-word; /* Поправка за мобилни */
 }
 
-.hero-subtitle { font-family: 'JetBrains Mono', monospace; color: var(--accent); margin-top: 20px; letter-spacing: 3px; font-size: 0.8rem; }
-.hero-divider { width: 50px; height: 4px; background: var(--accent); margin: 30px auto; border-radius: 10px; }
-.hero-description { color: #ccc; max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }
-
-.cta-button {
-    display: inline-block; padding: 18px 40px; background: var(--accent);
-    color: white; text-decoration: none; border-radius: 100px; font-weight: 800;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3); transition: 0.4s;
+/* ОБНОВЕН СТИЛ: БЯЛО И СЯНКА */
+.hero-subtitle { 
+    font-family: var(--font-mono); 
+    color: #ffffff; /* Чисто бяло */
+    text-shadow: 0 0 15px rgba(99, 102, 241, 0.6), 0 4px 10px rgba(0,0,0,0.9);
+    font-size: clamp(0.6rem, 1.2vw, 0.85rem); 
+    letter-spacing: clamp(2px, 0.5vw, 5px); 
+    margin-top: 15px; 
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-.cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.5); }
+.hero-description { 
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem); 
+    color: var(--text-dim); max-width: 550px; 
+    margin: 20px auto 0;
+}
 
-/* --- GRID SYSTEM --- */
-.container { max-width: 1200px; margin: 0 auto; padding: 100px 40px; }
-.section-header { margin-bottom: 50px; }
-.label { color: var(--accent); font-family: 'JetBrains Mono'; font-size: 0.7rem; letter-spacing: 3px; }
-h2 { font-size: 2.5rem; font-weight: 800; margin-top: 10px; }
+/* --- КОНТЕЙНЕРИ И ГРИДОВЕ --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 80px 25px; }
 
-.bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+h2 { font-size: var(--fs-h2); margin-bottom: 40px; font-weight: 800; }
+
+.bento-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+}
 
 .bento-item, .career-card { 
-    background: var(--card); padding: 40px; border-radius: 30px; 
-    border: 1px solid var(--border); transition: 0.4s ease; 
+    background: var(--card); padding: 30px; 
+    border-radius: 20px; border: 1px solid var(--border);
+    transition: 0.3s ease;
 }
+
+.bento-item:hover, .career-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
 .bento-item.wide { grid-column: span 2; }
-.bento-item:hover, .career-card:hover { 
-    border-color: rgba(255, 255, 255, 0.4); transform: translateY(-5px); 
-}
 
-.icon, .career-icon { font-size: 2.2rem; display: block; margin-bottom: 20px; }
-h3 { font-size: 1.5rem; margin-bottom: 12px; }
-h4 { color:cornsilk; margin-bottom: 10px; font-size: 1.2rem; }
-p { color: var(--text-dim); font-size: 0.95rem; }
+.icon, .career-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
 
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.gallery-item { position: relative; height: 300px; border-radius: 25px; overflow: hidden; border: 1px solid var(--border); }
+h3, h4 { font-size: var(--fs-h3); margin-bottom: 8px; color: #fff; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+
+.gallery-item { height: 250px; border-radius: 18px; overflow: hidden; position: relative; }
+
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 0.5s; }
-.gallery-item:hover img { transform: scale(1.05); filter: brightness(0.9); }
-.img-overlay {
-    position: absolute; bottom: 0; width: 100%; padding: 25px;
-    background: linear-gradient(to top, rgba(12, 12, 12, 0.9), transparent);
-    text-shadow: #474747 3px 5px 2px, -11px 1px 7px rgba(206,33,179,0);
+
+.gallery-item:hover img { filter: brightness(1); transform: scale(1.05); }
+
+.career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+
+/* --- FOOTER & BUTTON --- */
+footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--border); opacity: 0.8; }
+
+.top-button { 
+    position: fixed; bottom: 30px; right: 30px; 
+    width: 45px; height: 45px; background: var(--accent); 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    color: white; text-decoration: none; z-index: 100;
 }
-.img-overlay span { font-family: 'JetBrains Mono'; color: var(--accent); font-weight: bold; font-size: 0.75rem; }
 
-/* --- FOOTER --- */
-footer { padding: 80px 40px; border-top: 1px solid var(--border); text-align: center; opacity: 0.8; }
-.dev-info { font-family: 'JetBrains Mono'; font-size: 0.7rem; margin: 15px 0; color: #555; }
-.top-button { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--card); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; z-index: 100; }
-
+/* --- MOBILE --- */
 @media (max-width: 900px) {
-    /* Скриваме само обикновените линкове, но оставяме контейнера */
-    .nav-links li:not(:first-child) { 
-        display: none; 
-    }
-
-    /* Показваме и центрираме бутона за връщане */
-    .nav-links {
-        display: flex;
-    }
-
-    .nav-container {
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 1rem;
-    }
-
-    .back-link {
-        font-size: 0.65rem !important;
-        padding: 8px 15px !important;
-    }
-
-    .bento-grid { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .bento-item.wide { 
-        grid-column: span 1; 
-    }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-item.wide { grid-column: span 1; }
+    .nav-links li:not(:first-child) { display: none; }
+    .hero-section { height: 65vh; }
 }
