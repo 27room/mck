@@ -1,365 +1,254 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-bg: #f4f7f6;
+    --white: #ffffff;
+    --success-color: #27ae60;
 }
 
-html {
-    scroll-behavior: smooth;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0b0e14;
-    color: #e0e0e0;
-    line-height: 1.8;
-    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    scroll-behavior: smooth;
 }
 
-h1, h2 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-p {
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-}
-
-strong {
-    color: #00d4ff;
-}
-
-/* ============================================
-   НАВИГАЦИЯ
-   ============================================ */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(11, 14, 20, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid #00d4ff;
-    z-index: 1000;
-    padding: 15px 0;
-}
-
-.nav-container {
-    max-width: 1200px;
+.container {
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 20px;
+}
+
+.top-nav {
+    background: var(--primary-color);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo {
-    font-family: 'Orbitron', sans-serif;
-    color: #00d4ff;
-    font-size: 1.5rem;
-    text-shadow: 0 0 10px #00d4ff;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.85rem;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-.nav-item:hover {
-    color: #00d4ff;
-    text-shadow: 0 0 5px #00d4ff;
-}
-
-/* ============================================
-   HERO СЕКЦИЯ
-   ============================================ */
-.hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.4)),
-                      url('../Images/rs-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: #0b0e14;
-    height: 100vh;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.hero-content {
+.top-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-nav a:hover {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.hero {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: var(--white);
+    padding: 80px 20px;
     text-align: center;
-    z-index: 2;
-    padding: 0 20px;
+    border-bottom: 5px solid var(--accent-color);
 }
 
-.neon-text {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    color: #00d4ff;
-    text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff;
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
-.hero-divider {
-    width: 100px;
-    height: 4px;
-    background: #00d4ff;
-    margin: 20px auto;
-    box-shadow: 0 0 15px #00d4ff;
-}
-
-.hero-content p {
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 40px;
+.subtitle {
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 18px 45px;
-    background: #00d4ff;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-}
-
-.cta-button:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 0 40px #00d4ff;
-    background: #fff;
-}
-
-/* ============================================
-   СЕКЦИИ И СЪДЪРЖАНИЕ
-   ============================================ */
-.container {
-    padding: 100px 20px;
-}
-
-.dark-bg {
-    background-color: #0f131a;
-}
-
-.content-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
+section {
+    margin-bottom: 40px;
 }
 
 h2 {
-    color: #00d4ff;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
-}
-
-.highlight-text {
-    font-size: 1.2rem;
-    color: #00d4ff;
-    font-weight: 300;
-    margin-top: 30px;
-    font-style: italic;
-}
-
-/* ============================================
-   СПИСЪЦИ (GRID)
-   ============================================ */
-.grid-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    text-align: left;
-}
-
-.grid-list li {
-    background: #1a222d;
-    padding: 25px;
-    border-radius: 15px;
-    border-left: 6px solid #00d4ff;
-    transition: transform 0.3s, background 0.3s;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.grid-list li:hover {
-    transform: translateX(10px);
-    background: #242d3a;
-}
-
-/* ============================================
-   ИЗОБРАЖЕНИЯ
-   ============================================ */
-.image-center {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
     display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.tech-stack ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack li {
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.tech-stack li:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.highlight {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 15px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.feature-item {
+    background: #eef2f3;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.feature-item:hover {
+    background: #dce4e6;
+}
+
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.exp-box {
+    background: var(--accent-color);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.career-list, .check-list {
+    list-style: none;
+}
+
+.check-item {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.check-item i {
+    color: var(--success-color);
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.career-list .check-item i {
+    color: var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--primary-color);
+    color: var(--white);
     margin-top: 50px;
 }
 
-.image-center img {
-    max-width: 100%;
-    border-radius: 20px;
-    border: 2px solid #00d4ff;
-    box-shadow: 0 10px 50px rgba(0, 212, 255, 0.2);
-    transition: transform 0.4s;
-}
-
-.image-center img:hover {
-    transform: scale(1.03);
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
-footer {
-    text-align: center;
-    padding: 60px 20px;
-    background: #05070a;
-    border-top: 1px solid #333;
-    color: #888;
-    font-size: 0.9rem;
-}
-
-/* ============================================
-   БУТОН "НАГОРЕ"
-   ============================================ */
-.top-button {
+#backToTop {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #00d4ff;
-    color: #000;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 55px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-    box-shadow: 0 0 20px #00d4ff;
-    z-index: 1000;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
 }
 
-.top-button:hover {
+#backToTop:hover {
+    background-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 0 35px #00d4ff;
 }
 
-/* ============================================
-   АДАПТИВЕН ДИЗАЙН ЗА МОБИЛНИ УСТРОЙСТВА
-   ============================================ */
 @media (max-width: 768px) {
-
-    /* 1. Hero секция */
-    .hero-section {
-        background-attachment: scroll;
-        height: 100vh;
-    }
-
-    .neon-text {
-        font-size: 2.2rem;
-        line-height: 1.2;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
-        padding: 0 10px;
-    }
-
-    /* 2. Навигация */
-    .nav-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .nav-links {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-item {
-        font-size: 0.7rem;
-    }
-
-    /* 3. Секции и текстове */
-    .container {
-        padding: 50px 15px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    /* 4. Списъци в една колона */
-    .grid-list {
+    .grid, .exp-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
     }
-
-    .grid-list li {
-        padding: 15px;
-        font-size: 0.95rem;
+    .hero h1 {
+        font-size: 2.2rem;
     }
-
-    /* 5. Снимки */
-    .image-center img {
-        max-width: 100%;
-        border-radius: 10px;
+    .top-nav {
+        padding: 0.8rem;
     }
-
-    /* 6. CTA бутон */
-    .cta-button {
-        padding: 15px 30px;
-        font-size: 0.9rem;
-    }
-
-    /* 7. Бутон "Нагоре" */
-    .top-button {
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
         width: 45px;
         height: 45px;
-        line-height: 45px;
-        font-size: 1.2rem;
-        right: 15px;
-        bottom: 15px;
-    }
-}
-
-/* За много малки телефони (под 480px) */
-@media (max-width: 480px) {
-    .neon-text {
-        font-size: 1.8rem;
-    }
-
-    .logo {
-        font-size: 1.2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
     }
 }

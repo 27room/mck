@@ -1,187 +1,122 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Разработка на софтуер</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="./Images/fav-icon.svg">
     <link rel="stylesheet" href="./Styles/rs.css">
+    <title>Разработка на софтуер</title>
 </head>
 
 <body>
 
-<!-- НАВИГАЦИЯ -->
-<nav class="navbar" id="top">
-    <div class="nav-container">
-        <div class="logo">ПГМЕТТ „Христо Ботев"</div>
-        <ul class="nav-links">
-            <li><a class="nav-item" href="#kakvo">Какво ще учиш?</a></li>
-            <li><a class="nav-item" href="#praktika">Практика</a></li>
-            <li><a class="nav-item" href="#opyt">Реален опит</a></li>
-            <li><a class="nav-item" href="#profesiya">Професия</a></li>
-            <li><a class="nav-item" href="#granici">Без граници</a></li>
-            <li><a class="nav-item" href="#kogo">За кого?</a></li>
-        </ul>
-    </div>
-</nav>
+    <nav class="top-nav">
+        <a href="./index.html"><i class="fas fa-home"></i> Начало</a>
+    </nav>
 
-<!-- HERO СЕКЦИЯ -->
-<section class="hero-section">
-    <div class="hero-content">
-        <h1 class="neon-text">Разработка на софтуер</h1>
-        <div class="hero-divider"></div>
-        <p>Превърни идеите си в реални проекти</p>
-        <a href="#kakvo" class="cta-button">Научи повече</a>
-    </div>
-</section>
+    <header class="hero">
+        <div class="container">
+            <h1>Разработка на софтуер</h1>
+            <p class="subtitle">Превърни идеите си в реални проекти</p>
+        </div>
+    </header>
 
-<!-- ВЪВЕДЕНИЕ -->
-<section class="container dark-bg">
-    <div class="content-wrapper">
-        <p>
-            Обичаш ли компютрите, технологиите и идеята да създаваш нещо свое?
-            Специалност <strong>„Разработка на софтуер"</strong> в ПГМЕТТ „Христо Ботев"
-            ти дава възможност не просто да учиш програмиране, а да станеш създател
-            на софтуер, уеб приложения и интелигентни системи.
-        </p>
-        <p class="highlight-text">
-            Тук няма да бъдеш само потребител на технологиите – ще бъдеш техният автор.
-        </p>
-    </div>
-</section>
+    <main class="container">
+        <section class="intro card">
+            <p>Обичаш ли компютрите, технологиите и идеята да създаваш нещо свое? Специалност <strong>„Разработка на
+                    софтуер“ в ПГМЕТТ „Христо Ботев“</strong> ти дава възможност не просто да учиш програмиране, а да
+                станеш създател на софтуер, уеб приложения и интелигентни системи.</p>
+            <p class="highlight">Тук няма да бъдеш само потребител на технологиите – ще бъдеш техният автор.</p>
+        </section>
 
-<!-- КАКВО ЩЕ УЧИШ -->
-<section class="container" id="kakvo">
-    <div class="content-wrapper">
-        <h2>Какво ще учиш? <i class="fas fa-desktop"></i></h2> 
-        <p>
-            Още от първите години ще започнеш да пишеш реален код и да разработваш
-            собствени проекти. Ще работиш с едни от най-търсените технологии в света:
-        </p>
-        <ul class="grid-list">
-            <li>C#</li>
-            <li>JavaScript</li>
-            <li>SQL</li>
-            <li>ASP.NET</li>
-            <li>HTML &amp; CSS</li>
-            <li>Bootstrap</li>
-            <li>и още много съвременни инструменти</li>
-        </ul>
-        <p>
-            Ще разбереш как работят алгоритмите, как се създават бази данни
-            и как се изграждат бързи и ефективни приложения. Ще преминеш от основите на
-            програмирането до обектно-ориентирани проекти и реални софтуерни решения.
-        </p>
-    </div>
-</section>
+        <section class="learning">
+            <h2><i class="fas fa-code"></i> Какво ще учиш?</h2>
+            <div class="grid">
+                <div class="tech-stack">
+                    <ul>
+                        <li><i class="fab fa-cuttlefish"></i> C#</li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                        <li><i class="fas fa-server"></i> ASP.NET</li>
+                        <li><i class="fab fa-html5"></i> HTML & CSS</li>
+                        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="learning-text">
+                    <p>Още от първите години ще започнеш да пишеш реален код и да разработваш собствени проекти. Ще
+                        разбереш как работят алгоритмите, как се създават бази данни и как се изграждат бързи и
+                        ефективни приложения.</p>
+                </div>
+            </div>
+        </section>
 
-<!-- УЧЕНЕ ЧРЕЗ ПРАКТИКА -->
-<section class="container dark-bg" id="praktika">
-    <div class="content-wrapper">
-        <h2>Учене чрез практика <i class="fas fa-user-graduate"></i></h2>
-        <p>
-            Тук не се учи само теория. Обучението е проектно-базирано – ще:
-        </p>
-        <ul class="grid-list">
-            <li>Създаваш уеб сайтове и динамични уеб приложения</li>
-            <li>Разработваш desktop приложения с графичен интерфейс</li>
-            <li>Програмираш вградени системи</li>
-            <li>Изграждаш роботизирани механизми с Arduino и Raspberry Pi</li>
-            <li>Работиш по собствени идеи и екипни проекти</li>
-        </ul>
-        <p>
-            Ще видиш как редовете код оживяват и се превръщат в реално работещи системи.
-        </p>
-    </div>
-</section>
+        <section class="practice card">
+            <h2><i class="fas fa-laptop-code"></i> Учене чрез практика</h2>
+            <div class="features">
+                <div class="feature-item"><i class="fas fa-globe"></i> Динамични уеб приложения</div>
+                <div class="feature-item"><i class="fas fa-window-maximize"></i> Desktop приложения с GUI</div>
+                <div class="feature-item"><i class="fas fa-microchip"></i> Вградени системи</div>
+                <div class="feature-item"><i class="fas fa-robot"></i> Arduino и Raspberry Pi</div>
+            </div>
+        </section>
 
-<!-- РЕАЛЕН ОПИТ -->
-<section class="container" id="opyt">
-    <div class="content-wrapper">
-        <h2>Реален опит още в училище <i class="fas fa-briefcase"></i> </h2> 
-        <p>
-            Училището си партнира със софтуерни компании в Шумен и региона. Това означава:
-        </p>
-        <ul class="grid-list">
-            <li>Стажове в реална работна среда</li>
-            <li>Срещи с ИТ специалисти</li>
-            <li>Възможност да натрупаш практически опит още преди дипломирането</li>
-        </ul>
-        <p>
-            Ще усетиш какво означава да работиш в софтуерна фирма и ще изградиш ценни
-            професионални контакти.
-        </p>
-    </div>
-</section>
+        <section class="experience">
+            <h2><i class="fas fa-briefcase"></i> Реален опит още в училище</h2>
+            <p>Училището си партнира със софтуерни компании в Шумен и региона:</p>
+            <br>
+            <div class="exp-grid">
+                <div class="exp-box">Стажове в реална работна среда</div>
+                <div class="exp-box">Срещи с ИТ специалисти</div>
+                <div class="exp-box">Практически опит преди дипломиране</div>
+            </div>
+        </section>
 
-<!-- ПРОФЕСИЯ С БЪДЕЩЕ -->
-<section class="container dark-bg" id="profesiya">
-    <div class="content-wrapper">
-        <h2>Професия с бъдеще <i class="fas fa-building"></i></h2>
-        <p>
-            „Приложен програмист" е сред най-търсените професии в дигиталния сектор.
-            След завършване можеш да се реализираш като:
-        </p>
-        <ul class="grid-list">
-            <li>Разработчик на софтуер</li>
-            <li>Уеб разработчик</li>
-            <li>Програмист на вградени и роботизирани системи</li>
-            <li>ИТ консултант</li>
-            <li>Уеб администратор</li>
-            <li>Специалист по поддръжка на софтуер</li>
-        </ul>
-        <p>А това е само началото.</p>
-    </div>
-</section>
+        <section class="career card">
+            <h2><i class="fas fa-rocket"></i> Професия с бъдеще</h2>
+            <p>Стани „Приложен програмист“ и работи като:</p>
+            <ul class="career-list" style="list-style: none; padding: 0;">
+                <li class="check-item"><i class="fas fa-terminal"></i> Разработчик на софтуер</li>
+                <li class="check-item"><i class="fas fa-laptop-code"></i> Уеб разработчик</li>
+                <li class="check-item"><i class="fas fa-robot"></i> Програмист на роботизирани системи</li>
+                <li class="check-item"><i class="fas fa-headset"></i> ИТ консултант</li>
+            </ul>
+        </section>
 
-<!-- БЕЗ ГРАНИЦИ -->
-<section class="container" id="granici">
-    <div class="content-wrapper">
-        <h2>Без граници <i class="fas fa-yin-yang"></i></h2>
-        <p>
-            С придобитата трета степен на професионална квалификация можеш да
-            продължиш развитието си в области като:
-        </p>
-        <ul class="grid-list">
-            <li>Мобилни приложения</li>
-            <li>Облачни технологии</li>
-            <li>Изкуствен интелект</li>
-            <li>Разработка на игри</li>
-            <li>Роботика и Интернет на нещата</li>
-        </ul>
-        <p>
-            Програмирането ти дава свобода – можеш да работиш в офис, дистанционно или
-            от всяка точка на света.
-        </p>
-    </div>
-</section>
+        <section class="for-whom">
+            <h2><i class="fas fa-user-check"></i> За кого е тази специалност?</h2>
+            <div class="check-list">
+                <div class="check-item"><i class="fas fa-check-circle"></i> Обичаш логическите предизвикателства</div>
+                <div class="check-item"><i class="fas fa-check-circle"></i> Искаш да създаваш технологии</div>
+                <div class="check-item"><i class="fas fa-check-circle"></i> Мечтаеш за сигурна реализация</div>
+            </div>
+        </section>
+    </main>
 
-<!-- ЗА КОГО Е ТАЗИ СПЕЦИАЛНОСТ -->
-<section class="container dark-bg" id="kogo">
-    <div class="content-wrapper">
-        <h2>За кого е тази специалност? <i class="fas fa-male"></i> <i class="fas fa-female"></i> </h2>
-        <ul class="grid-list">
-            <li>&#10004; Ако обичаш логическите предизвикателства</li>
-            <li>&#10004; Ако искаш да създаваш, а не само да използваш технологии</li>
-            <li>&#10004; Ако мечтаеш за модерна професия с високо търсене</li>
-            <li>&#10004; Ако искаш сигурна реализация и добри доходи</li>
-        </ul>
-        <p class="highlight-text">
-            Тогава „Разработка на софтуер" може да бъде твоят старт към успешна ИТ кариера.
-        </p>
-    </div>
-</section>
+    <footer>
+        <p>&copy; От Кристиан Евгениев и Антонио Русев 2026 ПГМЕТТ "Христо Ботев" - гр.Шумен. Специалност "Разработка на софтуер".</p>
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-    <p>&copy; Разработено от Кристиан Евгениев и Антонио Русев ПГМЕТТ „Христо Ботев" Шумен, 11А Уеб дизайн</p>
-</footer>
+    <button id="backToTop" title="Нагоре">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-<!-- БУТОН НАГОРЕ -->
-<a href="#top" class="top-button">&#8679;</a>
+    <script>
+        window.onscroll = function () {
+            const backToTopButton = document.getElementById("backToTop");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        document.getElementById("backToTop").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
+
 </html>
