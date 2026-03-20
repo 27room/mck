@@ -1,226 +1,164 @@
-/* 1. ОБЩИ НАСТРОЙКИ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* --- ОСНОВНИ ПРОМЕНЛИВИ --- */
+:root {
+    --bg: #08080a;
+    --card: #111115;
+    --accent: #6366f1;
+    --text-main: #ffffff;
+    --text-dim: #94a3b8;
+    --border: rgba(255, 255, 255, 0.06);
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* АДАПТИВНА ТИПОГРАФИЯ (Интелигентно самонастройване) */
+    --fs-base: clamp(14px, 1vw, 17px);
+    --fs-h1: clamp(1.8rem, 7vw, 4rem); 
+    --fs-h2: clamp(1.5rem, 4vw, 2.5rem);
+    --fs-h3: clamp(1.1rem, 2vw, 1.4rem);
 }
 
-html {
-    scroll-behavior: smooth; /* ТОВА ПРАВИ СКРОЛВАНЕТО ПЛАВНО */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: var(--fs-base); 
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0b0e14;
-    color: #e0e0e0;
-    line-height: 1.6;
+    font-family: var(--font-main);
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
-h1, h2, .cta-button, .logo {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* 2. МЕНЮ */
+/* --- НАВИГАЦИЯ --- */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(11, 14, 20, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid #00d4ff;
-    z-index: 1000;
+    top: 0; width: 100%;
     padding: 15px 0;
+    background: rgba(8, 8, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 25px;
 }
 
-.logo {
-    color: #00d4ff;
-    font-size: 1.5rem;
-    text-shadow: 0 0 10px #00d4ff;
+.logo { font-weight: 800; font-size: 1.5rem; font-family: var(--font-mono); }
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+
+.nav-item { 
+    text-decoration: none; color: var(--text-dim); 
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; 
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.back-link {
+    color: #fff !important;
+    background: rgba(99, 102, 241, 0.15);
+    padding: 8px 16px !important;
+    border-radius: 8px;
 }
 
-.nav-item {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.85rem;
-    transition: 0.3s;
-}
-
-.nav-item:hover {
-    color: #00d4ff;
-    text-shadow: 0 0 5px #00d4ff;
-}
-
-/* 3. HERO СЕКЦИЯ С АНИМАЦИЯ (20 СЕКУНДИ) */
+/* --- HERO SECTION (САМОНАСТРОЙВАЩА СЕ) --- */
 .hero-section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: bgSlide 20s infinite ease-in-out;
+    height: 80vh; min-height: 450px;
+    display: flex; align-items: center; justify-content: center;
+    background-image: linear-gradient(rgba(8,8,10,0.85), rgba(8,8,10,0.85)), url("../Images/ee/431909420_900061888581498_7415636394313438956_n.png");
+    background-size: cover; background-position: center;
 }
 
-@keyframes bgSlide {
-    0%, 30% { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../Images/ee/power-supply.jpg'); }
-    33%, 63% { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../Images/ee/elektrotechnik.webp'); }
-    66%, 96% { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../Images/ee/ee-main-pic.webp'); }
-    100% { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('../Images/ee/power-supply.jpg'); }
+.live-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
-.hero-content {
-    z-index: 10;
-    text-align: center;
-    padding: 0 20px;
+.hero-content { 
+    position: relative; z-index: 10; text-align: center; 
+    width: 100%; max-width: 900px; padding: 0 20px;
 }
 
 .neon-text {
-    font-size: clamp(2rem, 8vw, 4rem);
-    color: #00d4ff;
-    text-shadow: 0 0 20px #00d4ff;
+    font-size: var(--fs-h1);
+    font-weight: 800; line-height: 1.1;
+    background: linear-gradient(to bottom, #fff 60%, #888);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    word-wrap: break-word; /* Поправка за мобилни */
 }
 
-.hero-divider {
-    width: 100px;
-    height: 4px;
-    background: #00d4ff;
-    margin: 20px auto;
-    box-shadow: 0 0 15px #00d4ff;
+/* ОБНОВЕН СТИЛ: БЯЛО И СЯНКА */
+.hero-subtitle { 
+    font-family: var(--font-mono); 
+    color: #ffffff; /* Чисто бяло */
+    text-shadow: 0 0 15px rgba(99, 102, 241, 0.6), 0 4px 10px rgba(0,0,0,0.9);
+    font-size: clamp(0.6rem, 1.2vw, 0.85rem); 
+    letter-spacing: clamp(2px, 0.5vw, 5px); 
+    margin-top: 15px; 
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
+.hero-description { 
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem); 
+    color: var(--text-dim); max-width: 550px; 
+    margin: 20px auto 0;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 18px 45px;
-    background: #00d4ff;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    transition: 0.4s;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+/* --- КОНТЕЙНЕРИ И ГРИДОВЕ --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 80px 25px; }
+
+h2 { font-size: var(--fs-h2); margin-bottom: 40px; font-weight: 800; }
+
+.bento-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
 }
 
-.cta-button:hover {
-    transform: scale(1.1);
-    background: #fff;
-    box-shadow: 0 0 40px #00d4ff;
+.bento-item, .career-card { 
+    background: var(--card); padding: 30px; 
+    border-radius: 20px; border: 1px solid var(--border);
+    transition: 0.3s ease;
 }
 
-/* 4. СЕКЦИИ СЪС СЪДЪРЖАНИЕ */
-.container {
-    padding: 100px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
+.bento-item:hover, .career-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+.bento-item.wide { grid-column: span 2; }
+
+.icon, .career-icon { font-size: 2rem; margin-bottom: 15px; display: block; }
+
+h3, h4 { font-size: var(--fs-h3); margin-bottom: 8px; color: #fff; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+
+.gallery-item { height: 250px; border-radius: 18px; overflow: hidden; position: relative; }
+
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 0.5s; }
+
+.gallery-item:hover img { filter: brightness(1); transform: scale(1.05); }
+
+.career-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+
+/* --- FOOTER & BUTTON --- */
+footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--border); opacity: 0.8; }
+
+.top-button { 
+    position: fixed; bottom: 30px; right: 30px; 
+    width: 45px; height: 45px; background: var(--accent); 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    color: white; text-decoration: none; z-index: 100;
 }
 
-.dark-bg {
-    background-color: #0f131a;
-    max-width: 100% !important;
-}
-
-h2 {
-    color: #00d4ff;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-}
-
-.intro-text {
-    font-size: 1.2rem;
-    color: #ccc;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.grid-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    list-style: none;
-    margin-top: 40px;
-}
-
-.grid-list li {
-    background: #1a222d;
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 5px solid #00d4ff;
-    text-align: left;
-    transition: 0.3s;
-}
-
-.grid-list li:hover {
-    transform: translateX(10px);
-    background: #242d3a;
-}
-
-.grid-list li span {
-    margin-right: 15px;
-    font-size: 1.3rem;
-}
-
-/* 5. FOOTER & TOP BUTTON */
-footer {
-    padding: 50px;
-    background: #05070a;
-    border-top: 1px solid #333;
-    text-align: center;
-}
-
-.top-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #00d4ff;
-    color: #000;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-    z-index: 1000;
-    box-shadow: 0 0 20px #00d4ff;
-    transition: 0.3s;
-}
-
-.top-button:hover {
-    transform: scale(1.1);
-    background: #fff;
-}
-
-@media (max-width: 768px) {
-    .container { padding: 60px 20px; }
-    .neon-text { font-size: 1.8rem; }
-    .nav-links { display: none; }
+/* --- MOBILE --- */
+@media (max-width: 900px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-item.wide { grid-column: span 1; }
+    .nav-links li:not(:first-child) { display: none; }
+    .hero-section { height: 65vh; }
 }

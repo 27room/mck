@@ -14,7 +14,6 @@
         font-size: 14px;
     }
 
-    /* Intro section */
     .intro {
         flex-direction: column;
         padding: 30px 5%;
@@ -35,7 +34,6 @@
         font-size: 16px;
     }
 
-    /* Cards */
     .features {
         padding: 30px 5%;
         grid-template-columns: 1fr;
@@ -49,7 +47,6 @@
         grid-template-columns: 1fr;
     }
 
-    /* Lists */
     .advantages,
     .disadvantages {
         padding: 30px 5%;
@@ -60,7 +57,6 @@
         font-size: 16px;
     }
 
-    /* Table */
     .comparison {
         padding: 40px 5%;
         overflow-x: auto;
@@ -83,11 +79,7 @@
         padding: 15px;
     }
 
-    /* Home button */
-    .index-Pager {
-        width: 50px;
-        height: 50px;
-    }
+    
 
     header div div:first-child {
         float: none !important;
@@ -285,6 +277,62 @@
     .index-Pager{
         width:9.55rem;
         height:9.55rem;
-        background:#e61e1e ;
-
+        background:#0083c0 ;
+        display:border;
+        border:none;
+    }
+    .specialty {
+        margin: 4rem 2rem;
+        padding: 3rem;
+        border-radius: 25px;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        text-align: center;
+    }
+    
+    .specialty h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .specialty .highlight {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+    
+    .specialty .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .specialty .box {
+        background: rgba(255,255,255,0.08);
+        padding: 1.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+        text-align: left;
+    }
+    
+    .specialty .box:hover {
+        transform: translateY(-8px) scale(1.02);
+        background: rgba(255,255,255,0.15);
+    }
+    
+    .specialty .box h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .specialty ul {
+        padding-left: 1.2rem;
+    }
+    
+    .specialty li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
     }

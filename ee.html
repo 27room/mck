@@ -3,81 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Стани Power Master | ПГМЕТТ "Христо Ботев"</title>
-    <!-- Шрифтове -->
+    <title>Електроснабдяване и електрообзавеждане | ПГМЕТТ "Христо Ботев"</title>
+    <!-- Правилно зареждане на шрифтовете -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/ee.css">
 </head>
 <body id="top">
 
-    <!-- МЕНЮ -->
+    <!-- НАВИГАЦИЯ -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">⚡ PGMETT</div>
+            <div class="logo">ПГМЕТТ "Христо Ботев"</span></div>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-item">Начало</a></li>
-                <li><a href="#about" class="nav-item">Специалност</a></li>
+                <li><a href="index.html" class="nav-item ">← НАЧАЛО</a></li>
                 <li><a href="#learn" class="nav-item">Умения</a></li>
+                <li><a href="#gallery" class="nav-item">База</a></li>
                 <li><a href="#career" class="nav-item">Реализация</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO СЕКЦИЯ С АНИМАЦИЯ (3 СНИМКИ - 20 СЕКУНДИ) -->
+    <!-- HERO СЕКЦИЯ -->
     <header class="hero-section">
+        <div class="live-bg"></div>
         <div class="hero-content">
-            <h1 class="neon-text">⚡ СТАННИ POWER MASTER ⚡</h1>
-            <div class="hero-divider"></div>
-            <p>Бъдещето е електрическо. Овладей енергията в ПГМЕТТ.</p>
-            <a href="#about" class="cta-button">ЗАПОЧНИ МИСИЯТА</a>
+            <h1 class="neon-text">Електроснабдяване и електрообзавеждане</h1>
+            <!-- ОБНОВЕНО ПОДЗАГЛАВИЕ -->
+            <p class="hero-subtitle">ПГМЕТТ "Христо Ботев"</p>
+            <p class="hero-description">
+                Майсторството на електрическите системи: от проектиране на мрежи до автоматизирано управление на енергията.
+            </p>
+            <!-- БУТОНЪТ Е ПРЕМАХНАТ -->
         </div>
     </header>
 
-    <!-- СЕКЦИЯ: ЗА СПЕЦИАЛНОСТТА -->
-    <section id="about" class="container">
-        <div class="content-wrapper">
-            <h2>⚡ Електроснабдяване и електрообзавеждане</h2>
-            <p class="intro-text">Ако те вълнуват електрическите мрежи и устройства, това е твоят път към високоотговорна професия. Ще участваш в проектирането, изграждането и поддръжката на модерни системи.</p>
+    <!-- УМЕНИЯ -->
+    <section id="learn" class="container">
+        <h2>Какво ще учиш?</h2>
+        <div class="bento-grid">
+            <article class="bento-item wide">
+                <span class="icon">⚡</span>
+                <h3>Електроснабдителни системи</h3>
+                <p>Проектиране, изграждане и експлоатация на мрежи в сгради и промишлени обекти.</p>
+            </article>
+            <article class="bento-item">
+                <span class="icon">🛠️</span>
+                <h3>Диагностика</h3>
+                <p>Локализиране на повреди в критична инфраструктура.</p>
+            </article>
+            <article class="bento-item">
+                <span class="icon">📟</span>
+                <h3>Автоматизация</h3>
+                <p>Работа с PLC и софтуер за управление.</p>
+            </article>
+            <article class="bento-item wide">
+                <span class="icon">🏗️</span>
+                <h3>Промишлено оборудване</h3>
+                <p>Монтаж на електрически машини и табла по стандарти.</p>
+            </article>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: ПРАКТИЧЕСКИ УМЕНИЯ (Отделена) -->
-    <section id="learn" class="container dark-bg">
-        <div class="content-wrapper">
-            <h2>🛠️ Твоят нов Skillset</h2>
-            <ul class="grid-list">
-                <li><span>🔌</span> Изграждане на осветителни и захранващи мрежи</li>
-                <li><span>⚙️</span> Монтаж на електрически машини и табла</li>
-                <li><span>🤖</span> Работа с автоматизирани системи за управление</li>
-                <li><span>🔍</span> Диагностика и локализиране на повреди</li>
-                <li><span>🛡️</span> Прилагане на мерки за електробезопасност</li>
-                <li><span>💻</span> Използване на софтуер за диагностика</li>
-            </ul>
+    <!-- ГАЛЕРИЯ -->
+    <section id="gallery" class="container">
+        <h2>Сфера на Интереси</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="./Images/ee/ee-main-pic.webp" alt="Енергийна система">
+                <div class="img-overlay"><h4>Мрежово управление</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/ee/elektrotechnik.webp" alt="Електротехник">
+                <div class="img-overlay"><h4>Практическа дейност</h4></div>
+            </div>
+            <div class="gallery-item">
+                <img src="./Images/ee/image.png.png" alt="Техническа база">
+                <div class="img-overlay"><h4>Лабораторна среда</h4></div>
+            </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ: ПРОФЕСИОНАЛНА РЕАЛИЗАЦИЯ (Отделена) -->
+    <!-- РЕАЛИЗАЦИЯ -->
     <section id="career" class="container">
-        <div class="content-wrapper">
-            <h2>💼 Професионална реализация</h2>
-            <p style="margin-bottom: 30px; color: #ccc;">След завършване можеш да работиш като:</p>
-            <ul class="grid-list">
-                <li><span>🏭</span> Електротехник в промишлени предприятия</li>
-                <li><span>🛠️</span> Специалист по поддръжка и ремонт на системи</li>
-                <li><span>🏗️</span> Монтажник и организатор на инсталации</li>
-                <li><span>📊</span> Техник за диагностика и технически контрол</li>
-            </ul>
+        <h2>Реализация</h2>
+        <div class="career-grid">
+            <div class="career-card">
+                <div class="career-icon">🏢</div>
+                <h4>Индустриален Електротехник</h4>
+                <p>Работа в големи промишлени предприятия.</p>
+            </div>
+            <div class="career-card">
+                <div class="career-icon">🔌</div>
+                <h4>Монтажник</h4>
+                <p>Проектиране и изграждане на инсталации.</p>
+            </div>
+            <div class="career-card">
+                <div class="career-icon">🛡️</div>
+                <h4>Техник по Контрол</h4>
+                <p>Специалист по диагностика и безопасност.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>ПГМЕТТ "Христо Ботев" - Град Шумен</p>
-        <p>Dev Crew: Димилиан Кънев & Георги Иванчев</p>
-        <p class="copy">© 2026 Всички права запазени.</p>
+      <footer>
+        <p>ПГМЕТТ "ХРИСТО БОТЕВ" — ГРАД ШУМЕН</p>
+        <p class="dev-info">РАЗРАБОТЕНО ОТ: ГЕОРГИ ИВАНЧЕВ И ДИМИЛИАН КЪНЕВ</p>
+        <p class="copy">© 2026 ВСИЧКИ ПРАВА ЗАПАЗЕНИ.</p>
     </footer>
 
-    <!-- БУТОН ЗА ВРЪЩАНЕ НАГОРЕ -->
-    <a href="#top" class="top-button">⬆</a>
+    <a href="#top" class="top-button">▲</a>
 
 </body>
 </html>
